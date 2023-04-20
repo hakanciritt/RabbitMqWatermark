@@ -9949,26 +9949,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hakan\\.nuget\\packages\\": {}
+    "/Users/hakancirit/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hakan\\source\\repos\\UdemyRabbitMQ.WaterMark\\UdemyRabbitMQ.WaterMark.UI\\UdemyRabbitMQ.WaterMark.UI.csproj",
+      "projectUniqueName": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/UdemyRabbitMQ.WaterMark.UI.csproj",
       "projectName": "UdemyRabbitMQ.WaterMark.UI",
-      "projectPath": "C:\\Users\\hakan\\source\\repos\\UdemyRabbitMQ.WaterMark\\UdemyRabbitMQ.WaterMark.UI\\UdemyRabbitMQ.WaterMark.UI.csproj",
-      "packagesPath": "C:\\Users\\hakan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hakan\\source\\repos\\UdemyRabbitMQ.WaterMark\\UdemyRabbitMQ.WaterMark.UI\\obj\\",
+      "projectPath": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/UdemyRabbitMQ.WaterMark.UI.csproj",
+      "packagesPath": "/Users/hakancirit/.nuget/packages/",
+      "outputPath": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\hakan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/hakancirit/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -10037,7 +10035,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
       }
     }
   }

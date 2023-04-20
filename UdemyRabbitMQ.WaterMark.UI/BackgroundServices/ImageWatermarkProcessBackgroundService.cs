@@ -3,7 +3,6 @@ using System.Text;
 using System.Text.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using UdemyRabbitMQ.WaterMark.UI.Models;
 using UdemyRabbitMQ.WaterMark.UI.Services;
 
 namespace UdemyRabbitMQ.WaterMark.UI.BackgroundServices
@@ -38,36 +37,12 @@ namespace UdemyRabbitMQ.WaterMark.UI.BackgroundServices
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            var channel1 = _clientService.Connect(true);
-            var channel2 = _clientService.Connect(true);
-            var channel3 = _clientService.Connect(true);
+            var channel = _clientService.Connect();
 
-            var consumer = new AsyncEventingBasicConsumer(channel1);
-            var consumer1 = new AsyncEventingBasicConsumer(channel2);
-            var consumer2 = new AsyncEventingBasicConsumer(channel3);
+            var consumer = new AsyncEventingBasicConsumer(channel);
 
-            channel1.BasicConsume(queue: RabbitMQClientService.QueueName, false, consumer);
-            channel2.BasicConsume(queue: RabbitMQClientService.ErrorEmailQueue, false, consumer1);
-            channel3.BasicConsume(queue: RabbitMQClientService.SuccessEmailQueue, false, consumer2);
-
+            channel.BasicConsume(queue: RabbitMQClientService.QueueName, false, consumer);
             consumer.Received += Consumer_Received;
-            consumer1.Received += Consumer_Received_For_Error_Email;
-            consumer2.Received += Consumer_Received_For_Success_Email;
-        }
-
-        private async Task Consumer_Received_For_Error_Email(object sender, BasicDeliverEventArgs @event)
-        {
-            var body = JsonSerializer.Deserialize<Product>(Encoding.UTF8.GetString(@event.Body.ToArray()));
-
-            Console.WriteLine(body.Id + " " + body.Name);
-            _channel.BasicAck(@event.DeliveryTag, false);
-        }
-        private async Task Consumer_Received_For_Success_Email(object sender, BasicDeliverEventArgs @event)
-        {
-            var body = JsonSerializer.Deserialize<Product>(Encoding.UTF8.GetString(@event.Body.ToArray()));
-
-            Console.WriteLine(body.Id + " " + body.Name);
-            _channel.BasicAck(@event.DeliveryTag, false);
         }
 
         private async Task Consumer_Received(object sender, BasicDeliverEventArgs @event)
@@ -77,7 +52,7 @@ namespace UdemyRabbitMQ.WaterMark.UI.BackgroundServices
                 var imageCreatedEvent = JsonSerializer.Deserialize<ProductImageCreatedEvent>(Encoding.UTF8.GetString(@event.Body.ToArray()));
                 string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", imageCreatedEvent.ImageName);
 
-                string siteName = "www.hakancirit.com";
+                /*string siteName = "www.hakancirit.com";
 
                 using var img = Image.FromFile(path);
                 using var graphic = Graphics.FromImage(img);
@@ -86,20 +61,33 @@ namespace UdemyRabbitMQ.WaterMark.UI.BackgroundServices
                 var color = Color.FromArgb(128, 255, 255, 255);
                 var brush = new SolidBrush(color);
                 var position = new Point(img.Width - ((int)textSize.Width + 30), img.Height - ((int)textSize.Height + 30));
-
+                
                 graphic.DrawString(siteName, font, brush, position);
                 img.Save("wwwroot/images/watermarks/" + imageCreatedEvent.ImageName);
 
                 img.Dispose();
                 graphic.Dispose();
+                */
+
+                // yukarıdaki işlemler görsel işleme de hata verdiği için geçici olarak yorum satırı haline getirildi.
+                string newPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/watermarks/", imageCreatedEvent.ImageName);
+
+                using (var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read))
+                {
+                    using (var destionationStream = new FileStream(newPath, FileMode.Create, FileAccess.Write))
+                    {
+                        await fileStream.CopyToAsync(destionationStream);
+                    }
+                }
+
                 _channel.BasicAck(@event.DeliveryTag, false);
             }
             catch (Exception e)
             {
                 _logger.LogError(e, e.Message);
+                // hata vermesi durumunda kuyruğa tekrar ekleyeceğimizi bildirdik.
+                _channel.BasicNack(deliveryTag: @event.DeliveryTag, multiple: false, requeue: true);
             }
-
-
         }
     }
 }

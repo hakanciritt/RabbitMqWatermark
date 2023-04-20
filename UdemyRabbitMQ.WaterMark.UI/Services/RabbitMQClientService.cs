@@ -27,18 +27,12 @@ namespace UdemyRabbitMQ.WaterMark.UI.Services
             _logger = logger;
         }
 
-        public IModel Connect(bool isNewChannelInstance = false)
+        public IModel Connect()
         {
 
             _connection = _connectionFactory.CreateConnection();
-            if (!isNewChannelInstance)
-            {
-                if (_channel is { IsOpen: true }) return _channel;
-
-                _channel = _connection.CreateModel();
-            }
-            else
-                _channel = _connection.CreateModel();
+            
+            _channel = _connection.CreateModel();
             
             _channel.ExchangeDeclare(ExchangeName, type: ExchangeType.Direct, true, false, null);
             _channel.QueueDeclare(QueueName, true, false, false, null);
@@ -55,7 +49,6 @@ namespace UdemyRabbitMQ.WaterMark.UI.Services
             
             return _channel;
         }
-
 
         public void Dispose()
         {
