@@ -1,0 +1,5 @@
+﻿<Properties StartupConfiguration="{1351BE89-71E5-47C4-AE19-DB269F76EE27}|Default">
+  <MonoDevelop.Ide.ItemProperties.UdemyRabbitMQ.WaterMark.UI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

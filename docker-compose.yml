@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  udemyrabbitmq.watermark.ui:
+    image: ${DOCKER_REGISTRY-}udemyrabbitmqwatermark
+    build:
+      context: .
+      dockerfile: UdemyRabbitMQ.WaterMark.UI/Dockerfile
