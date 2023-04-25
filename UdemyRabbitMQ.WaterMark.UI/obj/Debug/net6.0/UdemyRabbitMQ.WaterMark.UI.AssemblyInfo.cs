@@ -10,6 +10,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("c1f2ad41-669b-4185-a396-0d687f51a57d")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("UdemyRabbitMQ.WaterMark.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

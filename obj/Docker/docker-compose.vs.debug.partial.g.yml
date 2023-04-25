@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  udemyrabbitmq.watermark.ui:
+    image: udemyrabbitmqwatermark:dev
+    container_name: UdemyRabbitMQ.WaterMark.UI
+    build:
+      target: build-env
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "UdemyRabbitMQ.WaterMark.UI"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_udemyrabbitmq.watermark.ui$
+    volumes:
+      - /Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI:/app
+      - /Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark:/src
+      - /Users/hakancirit/vsdbg/vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_udemyrabbitmq.watermark.ui$
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_udemyrabbitmq.watermark.ui$ \"/app/bin/Debug/net6.0/UdemyRabbitMQ.WaterMark.UI.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true

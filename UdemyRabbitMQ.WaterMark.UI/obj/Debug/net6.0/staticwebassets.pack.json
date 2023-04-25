@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/UdemyRabbitMQ.WaterMark.UI.bundle.scp.css"
     },
     {
+      "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/.DS_Store",
+      "PackagePath": "staticwebassets/.DS_Store"
+    },
+    {
       "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
@@ -13,16 +17,60 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/images/.DS_Store",
+      "PackagePath": "staticwebassets/images/.DS_Store"
+    },
+    {
       "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/images/1d979dff-21fc-49c1-8317-d76ce13b4626.jpg",
       "PackagePath": "staticwebassets/images/1d979dff-21fc-49c1-8317-d76ce13b4626.jpg"
     },
     {
-      "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/images/652dc759-1e98-4072-9ec5-d60a9ad36779Ekran görüntüsü 2022-10-05 115823.jpg",
-      "PackagePath": "staticwebassets/images/652dc759-1e98-4072-9ec5-d60a9ad36779Ekran görüntüsü 2022-10-05 115823.jpg"
+      "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/images/3483906b-9acb-401e-bc50-cb22456269df.jpg",
+      "PackagePath": "staticwebassets/images/3483906b-9acb-401e-bc50-cb22456269df.jpg"
     },
     {
-      "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/images/watermarks/652dc759-1e98-4072-9ec5-d60a9ad36779Ekran görüntüsü 2022-10-05 115823.jpg",
-      "PackagePath": "staticwebassets/images/watermarks/652dc759-1e98-4072-9ec5-d60a9ad36779Ekran görüntüsü 2022-10-05 115823.jpg"
+      "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/images/7674ffb4-6c25-4e4d-ad81-2a7201a687b5.jpg",
+      "PackagePath": "staticwebassets/images/7674ffb4-6c25-4e4d-ad81-2a7201a687b5.jpg"
+    },
+    {
+      "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/images/7ebceb18-1f03-465c-ab3e-22f6c9ebb560.jpg",
+      "PackagePath": "staticwebassets/images/7ebceb18-1f03-465c-ab3e-22f6c9ebb560.jpg"
+    },
+    {
+      "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/images/816734e3-717b-4968-b15e-641339426327.jpg",
+      "PackagePath": "staticwebassets/images/816734e3-717b-4968-b15e-641339426327.jpg"
+    },
+    {
+      "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/images/85ce036b-6ef9-4260-9c0b-c7b98194ad0d.jpg",
+      "PackagePath": "staticwebassets/images/85ce036b-6ef9-4260-9c0b-c7b98194ad0d.jpg"
+    },
+    {
+      "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/images/9d8077e3-59ca-4d66-bf58-a21ef2be707f.jpg",
+      "PackagePath": "staticwebassets/images/9d8077e3-59ca-4d66-bf58-a21ef2be707f.jpg"
+    },
+    {
+      "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/images/a2da0c36-7513-47d4-bb1d-279b64088d42.jpg",
+      "PackagePath": "staticwebassets/images/a2da0c36-7513-47d4-bb1d-279b64088d42.jpg"
+    },
+    {
+      "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/images/f242f1e2-ebc6-4737-962a-0255f7927689.jpg",
+      "PackagePath": "staticwebassets/images/f242f1e2-ebc6-4737-962a-0255f7927689.jpg"
+    },
+    {
+      "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/images/watermarks/.DS_Store",
+      "PackagePath": "staticwebassets/images/watermarks/.DS_Store"
+    },
+    {
+      "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/images/watermarks/1d979dff-21fc-49c1-8317-d76ce13b4626.jpg",
+      "PackagePath": "staticwebassets/images/watermarks/1d979dff-21fc-49c1-8317-d76ce13b4626.jpg"
+    },
+    {
+      "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/images/watermarks/7ebceb18-1f03-465c-ab3e-22f6c9ebb560.jpg",
+      "PackagePath": "staticwebassets/images/watermarks/7ebceb18-1f03-465c-ab3e-22f6c9ebb560.jpg"
+    },
+    {
+      "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/images/watermarks/85ce036b-6ef9-4260-9c0b-c7b98194ad0d.jpg",
+      "PackagePath": "staticwebassets/images/watermarks/85ce036b-6ef9-4260-9c0b-c7b98194ad0d.jpg"
     },
     {
       "Id": "/Users/hakancirit/Projects/WatermarkProject/RabbitMqWatermark/UdemyRabbitMQ.WaterMark.UI/wwwroot/js/site.js",

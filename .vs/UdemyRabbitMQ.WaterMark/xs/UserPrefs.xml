@@ -1,5 +1,38 @@
-﻿<Properties StartupConfiguration="{1351BE89-71E5-47C4-AE19-DB269F76EE27}|Default">
-  <MonoDevelop.Ide.ItemProperties.UdemyRabbitMQ.WaterMark.UI PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations />
+﻿<Properties StartupConfiguration="{3B5C5A9E-E6A4-4841-890F-6FEFFD57EED3}|Default">
   <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.UdemyRabbitMQ.WaterMark.UI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="UdemyRabbitMQ.WaterMark.UI/Controllers/ProductsController.cs">
+    <Files>
+      <File FileName="UdemyRabbitMQ.WaterMark.UI/Controllers/ProductsController.cs" Line="64" Column="59" />
+      <File FileName="UdemyRabbitMQ.WaterMark.UI/Services/RabbitMQClientService.cs" />
+      <File FileName="UdemyRabbitMQ.WaterMark.UI/Program.cs" />
+      <File FileName="UdemyRabbitMQ.WaterMark.UI/Controllers/HomeController.cs" />
+      <File FileName="UdemyRabbitMQ.WaterMark.UI/Models/AppDbContext.cs" />
+      <File FileName="UdemyRabbitMQ.WaterMark.UI/Views/Products/Edit.cshtml" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="UdemyRabbitMQ.WaterMark" expanded="True">
+            <Node name="docker-compose" expanded="True" />
+            <Node name="UdemyRabbitMQ.WaterMark.UI" expanded="True" selected="True">
+              <Node name="BackgroundServices" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Products" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

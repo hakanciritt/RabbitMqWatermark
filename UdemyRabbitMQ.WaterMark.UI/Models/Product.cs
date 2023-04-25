@@ -12,6 +12,7 @@ namespace UdemyRabbitMQ.WaterMark.UI.Models
         public decimal Price { get; set; }
         public int Stock { get; set; }
         public string? ImageName { get; set; }
-
+        public byte[]? QrCode { get; set; }
+        public string? Barcode { get; set; }
     }
 }

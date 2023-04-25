@@ -6,8 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using QRCoder;
 using UdemyRabbitMQ.WaterMark.UI.Models;
 using UdemyRabbitMQ.WaterMark.UI.Services;
+using SixLabors.ImageSharp;
+using ZXing;
+using ZXing.Common;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace UdemyRabbitMQ.WaterMark.UI.Controllers
 {
@@ -49,10 +55,6 @@ namespace UdemyRabbitMQ.WaterMark.UI.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
-
-            _rabbitMqPublisher.PublishForProduct(RabbitMQClientService.SuccessEmailRouting, new Product { Id = 1, Name = "başarılı email için ", Price = 100 });
-            _rabbitMqPublisher.PublishForProduct(RabbitMQClientService.ErrorEmailRouting, new Product { Id = 2, Name = "hatalı email için ", Price = 140 });
-
             return View();
         }
 
@@ -61,23 +63,30 @@ namespace UdemyRabbitMQ.WaterMark.UI.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Price,Stock,PictureUrl")] Product product, IFormFile ImageFile)
+        public async Task<IActionResult> Create([Bind("Id,Name,Price,Stock,PictureUrl,QrCode,Barcode")] Product product, IFormFile ImageFile)
         {
             if (!ModelState.IsValid) return View(product);
             if (ImageFile is { Length: > 0 })
             {
                 string randomImageName = Guid.NewGuid() + Path.GetExtension(ImageFile.FileName);
                 string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", randomImageName);
-
+                
                 await using FileStream stream = new(path, FileMode.Create);
                 await ImageFile.CopyToAsync(stream);
+
+                var generator = new QRCodeGenerator();
+                var crCodeInfo = generator.CreateQrCode(path, QRCodeGenerator.ECCLevel.Q);
+                var qrCode = new BitmapByteQRCode(crCodeInfo);
+                var qrCodeImage = qrCode.GetGraphic(20);
+
+                product.QrCode = qrCodeImage;
+
                 _rabbitMqPublisher.Publish(new ProductImageCreatedEvent() { ImageName = randomImageName });
                 product.ImageName = randomImageName;
             }
 
-            _context.Add(product);
+            await _context.AddAsync(product);
             await _context.SaveChangesAsync();
-
 
             return RedirectToAction(nameof(Index));
         }
